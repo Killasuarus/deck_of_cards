@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Solitaire!</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="deck.js"></script>
+    <script src="game.js"></script>
+    <script src="main.js"></script>
+    <style>
+    #brandicon {
+        height: 20px;
+    }
+    .borderbox {
+        outline: 1px dotted red;
+        height: 200px;
+    }
+    ul {
+        display: inline-block;
+        width: 120px;
+        margin: 0px 5px;
+        vertical-align: top;
+        outline: 1px dotted blue;
+        list-style: none;
+        padding: 0px;
+    }
+    ul li {
+        display:block;
+        width: 100%;
+        margin: 0px;
+        outline: 1px dotted green;
+        border-radius: 6px 6px 0 0;
+        border: 2px solid black;
+    }
+    li p {
+        text-align: left;
+        padding-left: 20px;
+        margin: 0px;
+    }
+    ul li:last-child {
+        height: 170px;
+        border-radius: 6px;
+        border: 2px solid black;
+    }
+
+    ul li:last-child p {
+        text-align: center;
+        font-size: 40px;
+        margin: auto 0;
+        padding: 50px 0;
+    }
+
+    .false {
+        border-radius: 6px 6px 0 0;
+        border: 6px 6px 0 6px solid white;
+        background-color: blue;
+        text-indent: 100%;
+    }
+
+    .hearts, .diamonds {
+        color: #b10000;
+    }
+
+    .spades, .clubs {
+        color: #000b21;
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- begin navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="http://icons.veryicon.com/ico/System/iOS7%20Minimal/Gaming%20Cards.ico" id="brandicon"></a>
+            <p class="navbar-text">Welcome to Dojo Solitaire!</p>
+            <button type="button" id="startgame" class="btn btn-success pull-right navbar-btn">Start Game!</button>
+        </div>
+    </nav>
+    <!-- end navbar -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 borderbox" id="drawpile">
+            </div>
+            <div class="col-md-7 borderbox" id="tableau">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2 borderbox" id="stack">
+                <ul>
+                    <li class="red"><p>♥ 10</p></p></li>
+                </ul>
+                <ul>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li><p class="spades">♦ A</p></li>
+                </ul>
+                <ul>
+                    <li><p class="diamonds false">♥ 10</p></p></li>
+                    <li><p class="spades false">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                </ul>
+                <ul>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li><p class="spades">♦ A</p></li>
+                </ul>
+                <ul>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></p></li>
+                </ul>
+                <ul>
+                    <li><p class="diamonds">♥ 10</p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></li>
+                    <li><p class="spades">♦ A</p></li>
+                </ul>
+                <ul>
+                    <li><p class="diamonds">10 ♥</p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></li>
+                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds">♥ 10</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
