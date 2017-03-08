@@ -16,11 +16,6 @@ function Deck() {
             deck.push(newcard);
         }
     }
-    this.reset = function(arr) {
-        for (var i = 0; i < arr.length; i++) {
-            deck.push(arr.pop());
-        }
-    };
     this.shuffle = function() {
         var m = deck.length, t, i;
 

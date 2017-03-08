@@ -66,10 +66,12 @@
         background: white;
         width: 120px;
     }
-
+    #pick_pile .card {
+        margin: auto;
+    }
     .card {
-        margin-top: 5px;
-        margin-left: 5px;
+        display: inline-block;
+        margin: 5px auto;
     }
 
     ul li:last-child p, .card p {
@@ -92,6 +94,12 @@
     #pick_pile {
         border: 5px solid #cccccc;
     }
+    .spades, .clubs {
+        color: #000b21;
+    }
+    .hearts, .diamonds {
+        color: #b10000;
+    }
     #pick_pile, .tableau_space {
         height: 180px;
         width: 130px;
@@ -101,14 +109,21 @@
     }
     .tableau_space {
         background: #cccccc;
+        text-align: center;
     }
-    .hearts, .diamonds {
-        color: #b10000;
+    .suit_bg {
+        color: #808080;
+        font-size: 80px;
+    }
+    #empty_pile {
+        height: 180px;
+        width: 130px;
+        margin: 10px 84px 0 20px;
+        display: inline-block;
+        vertical-align: top;
+        border: 5px solid #cccccc;
     }
 
-    .spades, .clubs {
-        color: #000b21;
-    }
     </style>
 </head>
 
@@ -126,66 +141,28 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 borderbox" id="drawpile">
-                <div id="draw_pile"></div>
+                <div id="empty_pile" class="draw_switch"></div>
                 <div id="pick_pile"></div>
             </div>
             <div class="col-md-7 borderbox" id="tableau">
-                <div class="tableau_space" id="t_diamonds">
+                <div class="tableau_space" id="t_diamonds"><span class="suit_bg">♦</span>
                 </div>
                 <div class="tableau_space" id="t_spades">
+                    <span class="suit_bg">♠</span>
                 </div>
                 <div class="tableau_space" id="t_clubs">
+                    <span class="suit_bg">♣</span>
                 </div>
                 <div class="tableau_space" id="t_hearts">
+                    <span class="suit_bg">♥</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 borderbox" id="stack">
-                <!-- <ul>
-                    <li class="red"><p>♥ 10</p></p></li>
-                </ul>
-                <ul>
-                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
-                    <li><p class="spades">♦ A</p></li>
-                </ul>
-                <ul>
-                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></p></li>
-                </ul>
-                <ul>
-                    <li class="false">♥ 10</p></p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
-                    <li><p class="spades">♦ A</p></li>
-                </ul>
-                <ul>
-                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></p></li>
-                </ul>
-                <ul>
-                    <li class="false"><p class="diamonds">♥ 10</p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li class="false"><p class="diamonds">♥ 10</p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li class="false"><p class="diamonds">♥ 10</p></li>
-                    <li><p class="spades">♦ A</p></li>
-                </ul>
-                <ul>
-                    <li class="false"><p class="diamonds">10 ♥</p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li class="false"><p class="diamonds">♥ 10</p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li class="false"><p class="diamonds">♥ 10</p></li>
-                    <li class="false"><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></li>
-                </ul> -->
             </div>
         </div>
+        <div class="code"></div>
     </div>
 
 
