@@ -58,7 +58,18 @@
         margin: auto 0;
         padding: 50px 0;
     }
+    #draw_pile {
+        border-radius: 6px;
+        border: 2px solid black;
+        background: url('images/ninjacard.jpg');
+        height: 170px;
+        width: 120px;
+        margin: 10px 50px 0 70px;
+        display: inline-block;
+    }
+    #drawn_card {
 
+    }
     .false {
         border-radius: 6px 6px 0 0;
         border: 6px 6px 0 6px solid white;
@@ -90,6 +101,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 borderbox" id="drawpile">
+                <div id="draw_pile"></div>
             </div>
             <div class="col-md-7 borderbox" id="tableau">
             </div>
@@ -100,7 +112,7 @@
                     <li class="red"><p>♥ 10</p></p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li><p class="diamonds false">♥ 10</p></p></li>
                     <li><p class="spades">♦ A</p></li>
                 </ul>
                 <ul>
@@ -109,8 +121,8 @@
                     <li><p class="diamonds">♥ 10</p></p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds">♥ 10</p></p></li>
-                    <li><p class="spades">♦ A</p></li>
+                    <li><p class="diamonds false">♥ 10</p></p></li>
+                    <li><p class="spades false">♦ A</p></li>
                     <li><p class="diamonds">♥ 10</p></p></li>
                     <li><p class="spades">♦ A</p></li>
                 </ul>

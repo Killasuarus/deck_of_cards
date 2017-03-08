@@ -16,6 +16,11 @@ function Deck() {
             deck.push(newcard);
         }
     }
+    this.reset = function(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            deck.push(arr.pop());
+        }
+    };
     this.shuffle = function() {
         var m = deck.length, t, i;
 
@@ -36,6 +41,9 @@ function Deck() {
     this.deal = function() {
         return deck.pop();
     };
+    this.showDeck = function() {
+        return deck;
+    }
     this.createStacks = function() {
         this.shuffle();
         var stack = [[],[],[],[],[],[],[]];
@@ -54,3 +62,10 @@ function Deck() {
         return stack;
     };
 }
+
+
+//draw pile
+
+//tableau
+
+//stack
