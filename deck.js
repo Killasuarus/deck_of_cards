@@ -2,7 +2,7 @@
 function Card(suit, rank) {
     this.suit = suit;
     this.rank = rank;
-    this.show = true;
+    this.show = false;
 }
 
 
@@ -43,7 +43,7 @@ function Deck() {
     };
     this.showDeck = function() {
         return deck;
-    }
+    };
     this.createStacks = function() {
         this.shuffle();
         var stack = [[],[],[],[],[],[],[]];
@@ -51,7 +51,7 @@ function Deck() {
             for (var k = 0; k <= j; k++) {
                 var card = this.deal();
                 if (k === j) {
-                    card.show = false;
+                    card.show = true;
                     stack[j].push(card);
                 }
                 else {

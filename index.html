@@ -17,42 +17,62 @@
     <script src="game.js"></script>
     <script src="main.js"></script>
     <style>
+    /** {
+        outline: 1px dotted red;
+    }*/
     #brandicon {
         height: 20px;
     }
     .borderbox {
-        outline: 1px dotted red;
         height: 200px;
+    }
+    .false {
+        border-radius: 6px 6px 0 0;
+        border: 2px solid #008588;
+        border-bottom: 0px;
+        text-indent: 100%;
+        text-wrap: none;
+        overflow: hidden;
+        height: 20px;
+        width: 120px;
+        background: url('images/ninjacard.jpg');
     }
     ul {
         display: inline-block;
         width: 120px;
-        margin: 0px 5px;
+        margin: 0px 19px;
         vertical-align: top;
-        outline: 1px dotted blue;
         list-style: none;
         padding: 0px;
     }
     ul li {
-        display:block;
-        width: 100%;
         margin: 0px;
-        outline: 1px dotted green;
         border-radius: 6px 6px 0 0;
         border: 2px solid black;
+        border-bottom: 0px;
+        width: 120px;
+        height: 20px;
     }
     li p {
         text-align: left;
         padding-left: 20px;
         margin: 0px;
+        height: 20px;
     }
-    ul li:last-child {
+    ul li:last-child, .card {
         height: 170px;
         border-radius: 6px;
         border: 2px solid black;
+        background: white;
+        width: 120px;
     }
 
-    ul li:last-child p {
+    .card {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
+    ul li:last-child p, .card p {
         text-align: center;
         font-size: 40px;
         margin: auto 0;
@@ -60,23 +80,28 @@
     }
     #draw_pile {
         border-radius: 6px;
-        border: 2px solid black;
+        border: 2px solid #008588;
         background: url('images/ninjacard.jpg');
         height: 170px;
         width: 120px;
-        margin: 10px 50px 0 70px;
+        margin: 10px 94px 0 20px;
         display: inline-block;
+        box-shadow: 2px 2px 4px black;
+        vertical-align: top;
     }
-    #drawn_card {
-
+    #pick_pile {
+        border: 5px solid #cccccc;
     }
-    .false {
-        border-radius: 6px 6px 0 0;
-        border: 6px 6px 0 6px solid white;
-        background-color: blue;
-        text-indent: 100%;
+    #pick_pile, .tableau_space {
+        height: 180px;
+        width: 130px;
+        margin: 8px 4px 0px 16px;
+        display: inline-block;
+        vertical-align: top;
     }
-
+    .tableau_space {
+        background: #cccccc;
+    }
     .hearts, .diamonds {
         color: #b10000;
     }
@@ -102,54 +127,63 @@
         <div class="row">
             <div class="col-md-5 borderbox" id="drawpile">
                 <div id="draw_pile"></div>
+                <div id="pick_pile"></div>
             </div>
             <div class="col-md-7 borderbox" id="tableau">
+                <div class="tableau_space" id="t_diamonds">
+                </div>
+                <div class="tableau_space" id="t_spades">
+                </div>
+                <div class="tableau_space" id="t_clubs">
+                </div>
+                <div class="tableau_space" id="t_hearts">
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-2 borderbox" id="stack">
-                <ul>
+            <div class="col-md-12 borderbox" id="stack">
+                <!-- <ul>
                     <li class="red"><p>♥ 10</p></p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds false">♥ 10</p></p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
                     <li><p class="spades">♦ A</p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds false">♥ 10</p></p></li>
-                    <li><p class="spades false">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
                     <li><p class="diamonds">♥ 10</p></p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds false">♥ 10</p></p></li>
-                    <li><p class="spades false">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></p></li>
+                    <li class="false">♥ 10</p></p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
                     <li><p class="spades">♦ A</p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds">♥ 10</p></p></li>
-                    <li><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></p></li>
-                    <li><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
                     <li><p class="diamonds">♥ 10</p></p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds">♥ 10</p></li>
-                    <li><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></li>
-                    <li><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></li>
                     <li><p class="spades">♦ A</p></li>
                 </ul>
                 <ul>
-                    <li><p class="diamonds">10 ♥</p></li>
-                    <li><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">10 ♥</p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
+                    <li class="false"><p class="diamonds">♥ 10</p></li>
+                    <li class="false"><p class="spades">♦ A</p></li>
                     <li><p class="diamonds">♥ 10</p></li>
-                    <li><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></li>
-                    <li><p class="spades">♦ A</p></li>
-                    <li><p class="diamonds">♥ 10</p></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
